@@ -1,25 +1,26 @@
 import AuthRepository from "../repositories/AuthRepository";
 
-import { UserDTO } from "../repositories/interface";
+import { CardDTO } from "../repositories/interface";
 
-class CreateUserService {
+class CreateCardService {
   private authRepository: AuthRepository;
 
   constructor(authRepository: AuthRepository) {
     this.authRepository = authRepository;
   }
 
-  public execute({ email, fullname, password, phone, username }: UserDTO) {
+  public execute({ card_limit, id, name, owner, type, token }: CardDTO) {
     const user = this.authRepository.create({
-      email,
-      fullname,
-      password,
-      phone,
-      username,
+      card_limit,
+      id,
+      name,
+      owner,
+      type,
+      token,
     });
 
     return user;
   }
 }
 
-export default CreateUserService;
+export default CreateCardService;

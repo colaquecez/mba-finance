@@ -1,9 +1,10 @@
-export interface UserDTO {
-  username: string;
-  email: string;
-  password: string;
-  fullname: string;
-  phone: string;
+export interface CardDTO {
+  id: string;
+  name: string;
+  type: string;
+  owner: string;
+  card_limit: number;
+  token?: string;
 }
 
 export interface LoginDTO {
